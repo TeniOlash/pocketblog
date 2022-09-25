@@ -1,0 +1,28 @@
+<main>
+  <article>
+    <mat-card class="card" *ngFor="let post of posts">
+      <mat-card-header>
+        <div mat-card-avatar class="header-image"></div>
+        <mat-card-title
+          [innerHtml]="post.title.rendered | uppercase"
+        ></mat-card-title>
+        <mat-card-subtitle>{{ post.date | date: "medium" }}</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        class="card-image"
+        mat-card-image
+        src="../../../assets/images/light-bulb-4514505_1920.jpg"
+        alt="post incident"
+      />
+      <mat-card-content>
+        <p [innerHtml]="post.excerpt.rendered | slice: 0:200"></p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a color="accent" mat-button [routerLink]="['/posts', post.id]"
+          >VIEW FULL POST</a
+        >
+        <!-- <button mat-button>LIKE</button> -->
+      </mat-card-actions>
+    </mat-card>
+  </article>
+</main>
