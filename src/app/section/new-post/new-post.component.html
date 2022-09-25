@@ -1,0 +1,52 @@
+<form>
+  <div>{{ newPost.title }}</div>
+  <div>{{ newPost.content }}</div>
+  <div>{{ newPost.categories[] }}</div>
+  <mat-form-field class="form-field" color="accent">
+    <mat-label>Incident Title</mat-label>
+    <input
+      matInput
+      type="text"
+      required
+      [(ngModel)]="newPost.title"
+      name="incident"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" color="accent" class="form-field">
+    <mat-label>Category</mat-label>
+    <mat-select color="accent" [(value)]="newPost.categories[]" required>
+      <mat-option value="3">Accident</mat-option>
+      <mat-option value="5">Riot</mat-option>
+      <mat-option value="6">Fighting</mat-option>
+      <mat-option value="7">Crime</mat-option>
+      <mat-option value="8">Protest</mat-option>
+
+      <!-- 1=uncategorized, 4=incident, 3=accident, 7=crime, 6=fighting, 8=protest, 5=riot -->
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill" color="accent" class="form-field">
+    <mat-label>Incident Description</mat-label>
+    <textarea
+      matInput
+      required
+      [(ngModel)]="newPost.content"
+      name="description"
+    ></textarea>
+  </mat-form-field>
+  <img src="newPost.image" src="" alt="photo of inctident" id="image" />
+  <button mat-raised-button color="primary" class="camera-btn">
+    <mat-icon color="accent">camera_alt</mat-icon>
+    Capture Incident
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    (click)="createPost()"
+  >
+    Submit Post
+  </button>
+</form>
+<div>
+  <app-auth [(token)]="token"></app-auth>
+</div>

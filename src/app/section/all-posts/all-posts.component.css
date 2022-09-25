@@ -1,0 +1,10 @@
+.card {
+    width: 80%;
+    margin: 1rem auto;
+}
+
+.header-image {
+    background-image: url('../../../assets/images/light-bulb-4514505_1920.jpg');
+    background-position: center;
+    background-size: cover;
+}

@@ -1,0 +1,21 @@
+<article>
+  <mat-card class="card" *ngIf="post">
+    <mat-card-header>
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title [innerHtml]="post.title.rendered"></mat-card-title>
+      <mat-card-subtitle>{{ post.date | date: "medium" }}</mat-card-subtitle>
+    </mat-card-header>
+    <img
+      class="card-image"
+      mat-card-image
+      src="../../../assets/images/light-bulb-4514505_1920.jpg"
+      alt="post incident"
+    />
+    <mat-card-content>
+      <p [innerHtml]="post.content.rendered"></p>
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- <button mat-button>LIKE</button> -->
+    </mat-card-actions>
+  </mat-card>
+</article>
