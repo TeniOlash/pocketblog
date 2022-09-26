@@ -1,7 +1,7 @@
 <form>
   <div>{{ newPost.title }}</div>
   <div>{{ newPost.content }}</div>
-  <div>{{ newPost.categories[] }}</div>
+  <div>{{ newPost.categories[0] }}</div>
   <mat-form-field class="form-field" color="accent">
     <mat-label>Incident Title</mat-label>
     <input
@@ -14,7 +14,7 @@
   </mat-form-field>
   <mat-form-field appearance="fill" color="accent" class="form-field">
     <mat-label>Category</mat-label>
-    <mat-select color="accent" [(value)]="newPost.categories[]" required>
+    <mat-select color="accent" [(value)]="newPost.categories[0]" required>
       <mat-option value="3">Accident</mat-option>
       <mat-option value="5">Riot</mat-option>
       <mat-option value="6">Fighting</mat-option>

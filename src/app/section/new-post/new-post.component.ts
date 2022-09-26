@@ -16,7 +16,7 @@ export class NewPostComponent implements OnInit {
   newPost = {
     title: '',
     content: '',
-    categories: [this.categoryId],
+    categories: [this.categoryId, 4],
     status: 'publish',
   };
 
@@ -40,7 +40,7 @@ export class NewPostComponent implements OnInit {
   takePicture() {
     navigator.camera.getPicture(this.onSuccess, this.onFail, {
       quality: 50,
-      // destinationType: Camera.DestinationType.DATA_URL,
+      destinationType: Camera.DestinationType.DATA_URL,
     });
   }
   onSuccess(imageData: any) {
