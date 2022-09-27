@@ -16,14 +16,12 @@ export class CameraComponent implements OnInit {
     var options = {
       // Some common settings are 20, 50, and 100
       quality: 50,
-      destinationType: Camera.DestinationType.FILE_URI,
+      destinationType: Camera.DestinationType.DATA_URL,
       // In this app, dynamically set the picture source, Camera or photo gallery
       sourceType: srcType,
       encodingType: Camera.EncodingType.JPEG,
       mediaType: Camera.MediaType.PICTURE,
       cameraDirection: Camera.Direction.BACK,
-      targetHeight: 316,
-      targetWidth: 560,
     };
     return options;
   }
@@ -31,7 +29,7 @@ export class CameraComponent implements OnInit {
   openCamera() {
     var srcType = Camera.PictureSourceType.CAMERA;
     var options = this.setOptions(srcType);
-    var func = this.createNewFileEntry;
+    // var func = this.createNewFileEntry;
 
     navigator.camera.getPicture(
       (imageUri) => {
@@ -39,7 +37,7 @@ export class CameraComponent implements OnInit {
         // You may choose to copy the picture, save it somewhere, or upload.
         console.log(this.imageUrl);
 
-        func(imageUri);
+        // func(imageUri);
       },
       function cameraError(error) {
         console.debug('Unable to obtain picture: ' + error, 'app');
@@ -49,7 +47,7 @@ export class CameraComponent implements OnInit {
   }
   // display image
   displayImage(imgUri: any) {
-    this.imageUrl = imgUri;
+    this.imageUrl = 'data:image/jpeg; base64,' + imgUri;
   }
   // get a file entry
   getFileEntry(imgUri: any) {

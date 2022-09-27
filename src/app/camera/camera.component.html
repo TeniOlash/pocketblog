@@ -1,12 +1,13 @@
-<img [src]="imageUrl" alt="" />
-<p>{{ imageUrl }}</p>
-
-<button
-  mat-raised-button
-  color="primary"
-  class="camera-btn"
-  (click)="openCamera()"
->
-  <mat-icon color="accent">camera_alt</mat-icon>
-  Capture Incident
-</button>
+<div class="camera-container">
+  <button
+    mat-raised-button
+    color="primary"
+    class="camera-btn"
+    (click)="openCamera()"
+  >
+    <mat-icon color="accent">camera_alt</mat-icon>
+    Capture Incident
+  </button>
+  <img [src]="imageUrl" alt="incident image" />
+  <br />
+</div>
