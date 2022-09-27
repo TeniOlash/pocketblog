@@ -15,17 +15,6 @@
         alt="post incident"
       />
       <mat-card-content>
-        <div [ngSwitch]="post.categories">
-          <p *ngSwitchCase="3">Accident</p>
-          <p *ngSwitchCase="4">Incident</p>
-          <p *ngSwitchCase="5">Riot</p>
-          <p *ngSwitchCase="6">Fighting</p>
-          <p *ngSwitchCase="7">Crime</p>
-          <p *ngSwitchCase="8">Protest</p>
-          <p *ngSwitchCase="1">Uncategorized</p>
-          <p *ngSwitchDefault>Incident</p>
-        </div>
-        <!-- 1=uncategorized, 4=incident, 3=accident, 7=crime, 6=fighting, 8=protest, 5=riot -->
         <p [innerHtml]="post.excerpt.rendered | slice: 0:200"></p>
       </mat-card-content>
       <mat-card-actions>

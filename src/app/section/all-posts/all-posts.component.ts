@@ -20,4 +20,7 @@ export class AllPostsComponent implements OnInit {
       console.log('Data???', data);
     });
   }
+  // viewPost(event: any) {
+
+  // }
 }

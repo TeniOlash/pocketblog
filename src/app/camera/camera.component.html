@@ -1,4 +1,5 @@
 <div class="camera-container">
+  <img [src]="camImage" alt="photo of incident" *ngIf="showCam()" />
   <button
     mat-raised-button
     color="primary"
@@ -8,6 +9,4 @@
     <mat-icon color="accent">camera_alt</mat-icon>
     Capture Incident
   </button>
-  <img [src]="imageUrl" alt="incident image" />
-  <br />
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
+declare var camera: any;
 @Component({
   selector: 'app-new-post',
   templateUrl: './new-post.component.html',
@@ -11,7 +12,6 @@ export class NewPostComponent implements OnInit {
 
   postUrl: string = 'http://localhost/pocketblog/wp-json/wp/v2/posts';
   categoryId!: number;
-  image: any;
   newPost = {
     title: '',
     content: '',
@@ -33,18 +33,4 @@ export class NewPostComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
-  // takePicture() {
-  //   navigator.camera.getPicture(this.onSuccess, this.onFail, {
-  //     quality: 50,
-  //     destinationType: Camera.DestinationType.DATA_URL,
-  //   });
-  // }
-  // onSuccess(imageData: any) {
-  //   let image = document.getElementById('image');
-  //   this.image = 'data:image/jpeg;base64,' + imageData;
-  // }
-  // onFail(err: string) {
-  //   alert('Operation Failed' + err);
-  // }
 }

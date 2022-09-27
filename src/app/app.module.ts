@@ -25,7 +25,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { SinglePostComponent } from './section/single-post/single-post.component';
 import { AuthComponent } from './authentication/auth/auth.component';
 import { CameraComponent } from './camera/camera.component';
-import { LoginComponent } from './authentication/login/login.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -45,7 +44,6 @@ const routes: Routes = [
     SinglePostComponent,
     AuthComponent,
     CameraComponent,
-    LoginComponent,
   ],
   imports: [
     FormsModule,
